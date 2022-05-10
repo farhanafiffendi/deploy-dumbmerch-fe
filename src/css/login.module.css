@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.containerLogin {
+    padding: 20px 25px;
+    width: 340px;
+    height: fit-content;
+    /* position: absolute; */
+    /* margin-top: 100px; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.containerLogin h2 {
+    color: white;
+}
+
+.containerLogin h1 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 4px solid blue;
+}
+
+.containerLogin label {
+    text-align: left;
+    color: white;
+}
+
+.containerLogin form input {
+    color: white;
+    width: 100%;
+    /* border: 1px solid white; */
+    margin-bottom: 15px;
+    /* border-bottom: 2px solid blue; */
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.containerLogin button {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+}
+
+.containerLogin button:hover {
+    color: black;
+}
+
+@media (min-width: 992px) { 
+    .containerLogin{
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: flex-end !important;
+        text-align: start;
+    }
+
+    .carousel{
+        text-align: start !important;
+    }
+}

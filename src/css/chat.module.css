@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kiri {
+    border-right: 1px solid rgb(116, 116, 116);
+    border-top: 1px solid rgb(116, 116, 116);
+    height: 89vh;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-x: hidden;
+}
+
+.kanan {
+    border-top: 1px solid rgb(116, 116, 116);
+    height: 89vh;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-x: hidden;
+}
+
+.gambar1{
+    margin-top: 10px;
+    height: 60px;
+    width: 100%;
+    /* border: 1px solid rgb(255, 255, 255); */
+    padding: 6px;
+}
+
+.gambar1 p{
+    background-color: rgb(87, 87, 87);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.chat{
+    line-height: 20px;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+.gambar1 img{
+    margin-top: 5px;
+    max-height: 60%;
+}
+
+
+.kotak{
+    width: 100px;
+    width: 40px;
+    border: 1px solid black;
+}

@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.navbar {
+    height: 11vh;
+}
+
+/* .navColor ul li a {
+    color: white !important;
+} */
+
+/* .klik:hover{
+color: red !important;
+} */
