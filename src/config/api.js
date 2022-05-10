@@ -1,19 +1,15 @@
-export const API = () => {
-    const baseUrl =
-        process.env.REACT_APP_SERVER_URL ||
-        'https://dumbmerch-id.herokuapp.com/api/v1' ||
-        'https://localhost:5000/api/v1';
+// Create API Config here ...
+import axios from 'axios';
 
-    const executeAPI = async (endpoint, config) => {
-        const response = await fetch(baseUrl + endpoint, config);
-        const data = await response.json();
-        return data;
-    };
+export const API = axios.create({
+    baseURL: process.env.REACT_APP_SERVER_URL || 'https://dumbmerch-id.herokuapp.com/api/v1/'
+        || 'http://localhost:5000/api/v1/',
+});
 
-    return {
-        get: executeAPI,
-        post: executeAPI,
-        patch: executeAPI,
-        delete: executeAPI,
-    };
+export const setAuthToken = (token) => {
+    if (token) {
+        API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } else {
+        delete API.defaults.headers.commin['Authorization'];
+    }
 };

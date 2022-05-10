@@ -21,16 +21,15 @@ import AddProductAdmin from './pages/AddProductAdmin';
 import Complain from './pages/Complain';
 import ComplainAdmin from './pages/ComplainAdmin'
 
-import { API } from './config/api';
+import { setAuthToken, API } from './config/api';
 import Profile from './pages/Profil';
 
 
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token)
-// }
+if (localStorage.token) {
+  setAuthToken(localStorage.token)
+}
 
 function App() {
-  let api = API();
   let navigate = useNavigate();
 
   // Init user context here ...
@@ -55,13 +54,7 @@ function App() {
   // Create function for check user token here ...
   const checkUser = async () => {
     try {
-      const config = {
-        method: "GET",
-        headers: {
-          Authorization: "Basic " + localStorage.token,
-        },
-      };
-      const response = await api.get('/check', config);
+      const response = await API.get('/check');
 
       // If the token incorrect
       if (response.status === 404) {
