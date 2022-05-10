@@ -80,7 +80,7 @@ export default function AddProductAdmin() {
 
             // Store data with FormData as object
             const formData = new FormData();
-            formData.set('image', form.image[0], form.image[0].name);
+            formData.set('image', form?.image[0], form?.image[0]?.name);
             formData.set('name', form.name);
             formData.set('desc', form.desc);
             formData.set('price', form.price);
