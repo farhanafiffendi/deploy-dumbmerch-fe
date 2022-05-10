@@ -39,7 +39,6 @@ export default function UpdateProduct() {
       desc: response.data.data.desc,
       price: response.data.data.price,
       qty: response.data.data.qty,
-      image: response.data.image,
     });
     setProduct(response.data.data);
   });
