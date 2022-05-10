@@ -55,7 +55,13 @@ function App() {
   // Create function for check user token here ...
   const checkUser = async () => {
     try {
-      const response = await api.get('/check');
+      const config = {
+        method: "GET",
+        headers: {
+          Authorization: "Basic " + localStorage.token,
+        },
+      };
+      const response = await api.get('/check', config);
 
       // If the token incorrect
       if (response.status === 404) {
