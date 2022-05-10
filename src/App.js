@@ -30,8 +30,7 @@ import Profile from './pages/Profil';
 // }
 
 function App() {
-  let API = API();
-  const [state, dispatch] = useContext(UserContext);
+  let api = API();
   let navigate = useNavigate();
 
   // Init user context here ...
@@ -56,7 +55,7 @@ function App() {
   // Create function for check user token here ...
   const checkUser = async () => {
     try {
-      const response = await API.get('/check');
+      const response = await api.get('/check');
 
       // If the token incorrect
       if (response.status === 404) {
