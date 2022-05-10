@@ -21,15 +21,17 @@ import AddProductAdmin from './pages/AddProductAdmin';
 import Complain from './pages/Complain';
 import ComplainAdmin from './pages/ComplainAdmin'
 
-import { setAuthToken, API } from './config/api';
+import { API } from './config/api';
 import Profile from './pages/Profil';
 
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token)
-}
+// if (localStorage.token) {
+//   setAuthToken(localStorage.token)
+// }
 
 function App() {
+  let API = API();
+  const [state, dispatch] = useContext(UserContext);
   let navigate = useNavigate();
 
   // Init user context here ...
