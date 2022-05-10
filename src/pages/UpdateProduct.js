@@ -39,6 +39,7 @@ export default function UpdateProduct() {
       desc: response.data.data.desc,
       price: response.data.data.price,
       qty: response.data.data.qty,
+      image: response.data.image,
     });
     setProduct(response.data.data);
   });
@@ -93,8 +94,8 @@ export default function UpdateProduct() {
 
       // Store data with FormData as object
       const formData = new FormData();
-      if (form.image) {
-        formData.set('image', form?.image[0], form?.image[0]?.name);
+      if (preview) {
+        formData.set("image", preview[0], preview[0]?.name);
       }
       formData.set('name', form.name);
       formData.set('desc', form.desc);
