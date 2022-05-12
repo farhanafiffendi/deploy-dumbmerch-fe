@@ -74,9 +74,8 @@ export default function UpdateProduct() {
     });
 
     // Create image url for preview
-    if (e.target.type === 'file') {
-      let url = URL.createObjectURL(e.target.files[0]);
-      setPreview(url);
+    if (e.target.type === "file") {
+      setPreview(e.target.files);
     }
   };
 
@@ -125,7 +124,7 @@ export default function UpdateProduct() {
           </Col>
           <Col xs="12">
             <form onSubmit={(e) => handleSubmit.mutate(e)}>
-              {preview && (
+              {!preview && (
                 <div>
                   <img
                     src={preview}
