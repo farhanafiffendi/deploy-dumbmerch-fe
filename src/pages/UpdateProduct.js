@@ -32,13 +32,13 @@ export default function UpdateProduct() {
   // Fetching detail product data by id from database
   useQuery('productCache', async () => {
     const response = await API.get('/product/' + id);
-    setPreview(response.data.data.image);
     setForm({
       ...form,
       name: response.data.data.name,
       desc: response.data.data.desc,
       price: response.data.data.price,
       qty: response.data.data.qty,
+      image: response.data.image,
     });
     setProduct(response.data.data);
   });
@@ -74,9 +74,8 @@ export default function UpdateProduct() {
     });
 
     // Create image url for preview
-    if (e.target.type === 'file') {
-      let url = URL.createObjectURL(e.target.files[0]);
-      setPreview(url);
+    if (e.target.type === "file") {
+      setPreview(e.target.files);
     }
   };
 
@@ -93,8 +92,8 @@ export default function UpdateProduct() {
 
       // Store data with FormData as object
       const formData = new FormData();
-      if (form.image) {
-        formData.set('image', form?.image[0], form?.image[0]?.name);
+      if (preview) {
+        formData.set("image", preview[0], preview[0]?.name);
       }
       formData.set('name', form.name);
       formData.set('desc', form.desc);
@@ -125,16 +124,26 @@ export default function UpdateProduct() {
           </Col>
           <Col xs="12">
             <form onSubmit={(e) => handleSubmit.mutate(e)}>
-              {preview && (
+              {!preview ? (
                 <div>
                   <img
-                    src={preview}
+                    src={form.image}
                     style={{
-                      maxWidth: '150px',
-                      maxHeight: '150px',
-                      objectFit: 'cover',
+                      maxWidth: "150px",
+                      maxHeight: "150px",
+                      objectFit: "cover",
                     }}
-                    alt="preview"
+                  />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    src={URL.createObjectURL(preview[0])}
+                    style={{
+                      maxWidth: "150px",
+                      maxHeight: "150px",
+                      objectFit: "cover",
+                    }}
                   />
                 </div>
               )}
