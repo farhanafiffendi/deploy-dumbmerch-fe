@@ -74,8 +74,9 @@ export default function UpdateProduct() {
     });
 
     // Create image url for preview
-    if (e.target.type === "file") {
-      setPreview(e.target.files);
+    if (e.target.type === 'file') {
+      let url = URL.createObjectURL(e.target.files[0]);
+      setPreview(url);
     }
   };
 
@@ -92,8 +93,8 @@ export default function UpdateProduct() {
 
       // Store data with FormData as object
       const formData = new FormData();
-      if (preview) {
-        formData.set("image", preview[0], preview[0]?.name);
+      if (form.image) {
+        formData.set('image', form?.image[0], form?.image[0]?.name);
       }
       formData.set('name', form.name);
       formData.set('desc', form.desc);
@@ -124,7 +125,7 @@ export default function UpdateProduct() {
           </Col>
           <Col xs="12">
             <form onSubmit={(e) => handleSubmit.mutate(e)}>
-              {!preview && (
+              {preview && (
                 <div>
                   <img
                     src={preview}
