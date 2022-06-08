@@ -24,7 +24,7 @@ export default function NavAdmin(props) {
                 <NavbarComp.Brand as={Link} to="/complain-admin">
                     <img src={Logo} className="img-fluid" style={{ width: '60px', height: '60px' }} />
                 </NavbarComp.Brand>
-                <NavbarComp.Toggle aria-controls="basic-navbar-nav" />
+                <NavbarComp.Toggle aria-controls="basic-navbar-nav" style={{ color: 'white', background: 'white' }} />
                 <NavbarComp.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/complain-admin" className={props?.title === 'Complain admin' ? `text-navbar-active` : `text-navbar`}>Complain</Nav.Link>
