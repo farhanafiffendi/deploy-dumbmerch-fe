@@ -50,7 +50,7 @@ export default function Auth() {
               </button>
             </div>
           </Col>
-          <Col md="6">{isRegister ? <Register /> : <Login />}</Col>
+          <Col md="6" className="mb-5 ms-3">{isRegister ? <Register /> : <Login />}</Col>
         </Row>
       </Container>
     </div>
