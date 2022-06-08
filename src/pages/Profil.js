@@ -61,7 +61,7 @@ export default function Profile() {
                     <div className="col-lg-6 col-sm-12 d-flex flex-column align-items-end">
                         <h3 className='mb-3'>My Transaction</h3>
 
-                        <Button variant="primary" onClick={handleShow} className="me-2">
+                        <Button variant="primary" onClick={handleShow} className="me-2 mb-5">
                             Show Transaction
                         </Button>
 
