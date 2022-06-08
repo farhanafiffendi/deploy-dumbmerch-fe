@@ -42,10 +42,10 @@ export default function Auth() {
               <b>Indonesia</b>
             </p>
             <div className="mt-5">
-              <button onClick={switchLogin} className="btn btn-login px-5 mb-5 ms-2">
+              <button onClick={switchLogin} className="btn btn-login px-5">
                 Login
               </button>
-              <button onClick={switchRegister} className="btn btn-register mb-5 ms-2 text-light px-5">
+              <button onClick={switchRegister} className="btn btn-register text-light px-5">
                 Register
               </button>
             </div>

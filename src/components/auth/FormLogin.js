@@ -127,7 +127,7 @@ function FormLogin() {
     });
 
     return (
-        <div className="container mt-5 text-light">
+        <div className="container mt-5 text-light mb-5 ms-2">
             <div className="col-lg-12 d-flex justify-content-end">
                 <div className="row">
                     <div className="d-flex justify-content-end">
