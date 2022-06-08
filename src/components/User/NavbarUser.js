@@ -25,7 +25,7 @@ export default function NavbarUser(props) {
                 <NavbarComp.Brand as={Link} to="/">
                     <img src={logo} className="img-fluid" style={{ width: '60px', height: '60px' }} />
                 </NavbarComp.Brand>
-                <NavbarComp.Toggle aria-controls="basic-navbar-nav" style={{ color: 'white' }} />
+                <NavbarComp.Toggle aria-controls="basic-navbar-nav" style={{ color: 'white', background: 'white' }} />
                 <NavbarComp.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto text-light">
                         <Nav.Link as={Link} to="/complain" className={props?.title === 'Complain' ? `text-navbar-active` : `text-navbar`}>Complain</Nav.Link>
